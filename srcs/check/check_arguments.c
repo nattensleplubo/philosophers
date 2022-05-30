@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 21:19:22 by ngobert           #+#    #+#             */
-/*   Updated: 2022/05/30 10:27:52 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/05/30 10:39:45 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,5 @@ int	args_are_correct(int argc, char **argv)
 {
 	if (right_amount_of_args(argc) == TRUE && all_args_are_nums(argv) == TRUE)
 		return (TRUE);
-	return (FALSE);
+	return (print_right_syntax(), FALSE);
 }
