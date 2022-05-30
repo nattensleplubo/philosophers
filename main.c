@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 14:04:26 by ngobert           #+#    #+#             */
-/*   Updated: 2022/05/30 11:23:41 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/05/30 13:22:03 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,7 @@
 int	main(int argc, char **argv)
 {
 	if (args_are_correct(argc, argv))
-		printf("Cool\n");
+	{
+		
+	}
 }
