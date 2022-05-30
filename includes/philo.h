@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 14:10:58 by ngobert           #+#    #+#             */
-/*   Updated: 2022/05/30 13:31:30 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/05/30 13:38:10 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,6 @@ void	print_limits_error(void);
 
 /*	libft	*/
 long	ft_atol(const char *str);
+int		ft_strlen(char *str);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 21:19:22 by ngobert           #+#    #+#             */
-/*   Updated: 2022/05/30 13:23:45 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/05/30 13:36:34 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,24 @@ int	all_args_are_nums(char **argv)
 		if (the_string_is_numeric(argv[i]))
 			;
 		else
+			return (FALSE);
+	}
+	return (TRUE);
+}
+
+int	arg_outside_limits(char *str)
+{
+	
+}
+
+int	no_args_outside_limits(char **argv)
+{
+	int	i;
+
+	i = -1;
+	while (argv[++i])
+	{
+		if (arg_outside_limits(argv[i]))
 			return (FALSE);
 	}
 	return (TRUE);
