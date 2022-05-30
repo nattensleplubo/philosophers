@@ -8,6 +8,8 @@ INCLUDES		= ./includes/
 # INCLUDESLIBFT	= ./libft/
 
 SRCS = ./main.c \
+		./srcs/check/check_arguments.c \
+		./srcs/error_handling/print_errors.c \
 
 OBJS = ${SRCS:.c=.o}
 

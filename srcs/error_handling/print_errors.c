@@ -1,21 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   print_errors.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/11 14:04:26 by ngobert           #+#    #+#             */
-/*   Updated: 2022/05/30 10:20:10 by ngobert          ###   ########.fr       */
+/*   Created: 2022/05/29 21:32:33 by ngobert           #+#    #+#             */
+/*   Updated: 2022/05/29 21:34:36 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-int	main(int argc, char **argv)
+void	print_right_syntax(void)
 {
-	// printf("NUMBER OF ARGS : %d\n", argc);
-	
-	if (args_are_correct(argc, argv))
-		printf("Cool\n");
+	printf("Please use : num_of_philos time_to_die \
+	time_to_eat time_to_sleep\n");
 }
