@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 21:19:22 by ngobert           #+#    #+#             */
-/*   Updated: 2022/05/30 10:39:45 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/05/30 12:42:30 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int	all_args_are_nums(char **argv)
 	i = 0;
 	while (argv[++i])
 	{
-		if (the_string_is_numeric(argv[i]) == TRUE)
+		if (the_string_is_numeric(argv[i]))
 			;
 		else
 			return (FALSE);
@@ -68,7 +68,7 @@ int	all_args_are_nums(char **argv)
 
 int	args_are_correct(int argc, char **argv)
 {
-	if (right_amount_of_args(argc) == TRUE && all_args_are_nums(argv) == TRUE)
+	if (right_amount_of_args(argc) && all_args_are_nums(argv))
 		return (TRUE);
 	return (print_right_syntax(), FALSE);
 }

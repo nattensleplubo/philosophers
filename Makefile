@@ -18,10 +18,10 @@ all : $(EXEC)
 
 
 $(EXEC) : $(OBJS)
-	$(CC) $(CFLAGS) $^ -o $(EXEC) -I $(INCLUDES) -g
+	$(CC) $(CFLAGS) -pthread $^ -o $(EXEC) -I $(INCLUDES) -g
 
 .c.o:
-	$(CC) $(CFLAGS) -c $^ -o $@ -I $(INCLUDES) -g
+	$(CC) $(CFLAGS) -pthread -c $^ -o $@ -I $(INCLUDES) -g
 
 clean :
 	rm -rf $(OBJS)

@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 14:10:58 by ngobert           #+#    #+#             */
-/*   Updated: 2022/05/30 10:41:14 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/05/30 11:12:33 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #define FALSE 0
 
 /*	LIBRAIRIES	*/
+#include <pthread.h>
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
