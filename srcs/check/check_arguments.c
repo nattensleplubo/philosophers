@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 21:19:22 by ngobert           #+#    #+#             */
-/*   Updated: 2022/05/30 13:36:34 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/05/30 13:41:16 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,14 +68,16 @@ int	all_args_are_nums(char **argv)
 
 int	arg_outside_limits(char *str)
 {
-	
+	if (ft_atol(str) > INT_MAX || ft_atol(str) < INT_MIN)
+		return (TRUE);
+	return (FALSE);
 }
 
 int	no_args_outside_limits(char **argv)
 {
 	int	i;
 
-	i = -1;
+	i = 0;
 	while (argv[++i])
 	{
 		if (arg_outside_limits(argv[i]))

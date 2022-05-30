@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 14:10:58 by ngobert           #+#    #+#             */
-/*   Updated: 2022/05/30 13:38:10 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/05/30 13:39:36 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 /*	LIBRAIRIES	*/
 #include <pthread.h>
 #include <stdio.h>
+#include <limits.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include "colors.h"
