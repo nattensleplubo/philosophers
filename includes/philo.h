@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 14:10:58 by ngobert           #+#    #+#             */
-/*   Updated: 2022/05/31 14:34:05 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/05/31 17:02:28 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ typedef struct s_philo
 	int					last_meal;
 	int					is_eating;
 	int					time_to_die;
+	int					time_to_sleep;
+	int					time_to_eat;
 	int					number_of_meals;
 
 	pthread_t			thread_id;

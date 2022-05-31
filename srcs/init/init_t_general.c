@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 10:43:50 by ngobert           #+#    #+#             */
-/*   Updated: 2022/05/31 12:16:27 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/05/31 17:03:22 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ int	init_philos(t_general *general)
 		general->philos[i].right_fork = &general->fork_mutex[(i + 1) % general->number_of_philo];
 		general->philos[i].general = general;
 		general->philos[i].time_to_die = general->time_to_die;
+		general->philos[i].time_to_eat = general->time_to_eat;
+		general->philos[i].time_to_sleep = general->time_to_sleep;
 		general->philos[i].last_meal = 0;
 		general->philos[i].is_eating = 0;
 		general->philos[i].number_of_meals = 0;
