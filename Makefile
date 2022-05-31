@@ -14,6 +14,7 @@ SRCS = ./main.c \
 		./srcs/libft/ft_atol.c \
 		./srcs/libft/ft_itoa.c \
 		./srcs/init/init_t_general.c \
+		./srcs/routine/routine.c \
 
 OBJS = ${SRCS:.c=.o}
 
