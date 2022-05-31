@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 14:10:58 by ngobert           #+#    #+#             */
-/*   Updated: 2022/05/31 10:30:57 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/05/31 11:06:43 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,14 @@ typedef struct s_philo
 
 typedef struct s_general
 {
-	int				time_to_eat;
+	int				number_of_philo;
 	int				time_to_die;
+	int				time_to_eat;
 	int				time_to_sleep;
 	
-	int				number_of_philo;
 	int				number_of_meals;
 	int				starting_time;
+	int				is_dead;
 	
 	t_philo			*philos;
 }	t_general;
@@ -68,5 +69,9 @@ void	print_limits_error(void);
 long	ft_atol(const char *str);
 int		ft_strlen(char *str);
 char	*ft_itoa(int n);
+int		ft_atoi(const char *str);
+
+/*//? strucure initialization	*/
+int	init_structs(t_general *general, char **argv);
 
 #endif

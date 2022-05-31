@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 14:04:26 by ngobert           #+#    #+#             */
-/*   Updated: 2022/05/31 10:09:51 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/05/31 10:59:46 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@
 
 int	main(int argc, char **argv)
 {
-	t_general	general;
+	// t_general	general;
 
 	if (args_are_correct(argc, argv))
 	{
-		if (init_structs(&general))
+		if (init_structs(&general, argv))
 		{
 			begin_routine();
 		}
