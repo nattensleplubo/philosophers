@@ -10,6 +10,9 @@ INCLUDES		= ./includes/
 SRCS = ./main.c \
 		./srcs/check/check_arguments.c \
 		./srcs/error_handling/print_errors.c \
+		./srcs/libft/ft_strlen.c \
+		./srcs/libft/ft_atol.c \
+		./srcs/libft/ft_itoa.c \
 
 OBJS = ${SRCS:.c=.o}
 

@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 14:04:26 by ngobert           #+#    #+#             */
-/*   Updated: 2022/05/30 13:36:56 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/05/31 10:09:51 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,23 @@
 
 */
 
-// int	main(int argc, char **argv)
-// {
-// 	if (args_are_correct(argc, argv))
-// 	{
-		
-// 	}
-// }
-
-int	main(void)
+int	main(int argc, char **argv)
 {
-	
+	t_general	general;
+
+	if (args_are_correct(argc, argv))
+	{
+		if (init_structs(&general))
+		{
+			begin_routine();
+		}
+	}
 }
+
+// int	main(void)
+// {
+// 	char	*s1 = ft_itoa(INT_MAX);
+// 	char	*s2 = ft_itoa(INT_MIN);
+// 	printf("\nLen de %s : %d\n\n", s1, ft_strlen(s1));
+// 	printf("Len de %s : %d\n\n", s2, ft_strlen(s2));
+// }

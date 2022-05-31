@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 14:10:58 by ngobert           #+#    #+#             */
-/*   Updated: 2022/05/30 13:39:36 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/05/31 10:30:57 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,59 @@
 
 # define PHILO_H
 
-/*	DEFINES	*/
+/*//! DEFINES		*/
 #define TRUE 1
+#define SUCCESS 1
 #define FALSE 0
+#define ERROR 0
 
-/*	LIBRAIRIES	*/
+/*//! LIBRAIRIES	*/
 #include <pthread.h>
 #include <stdio.h>
 #include <limits.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <sys/time.h>
 #include "colors.h"
 
-/*	PROTOTYPES	*/
+/*//! STRUCTURES	*/
+typedef struct s_philo
+{
+	int				id;
+	int				last_meal;
+	int				is_eating;
 
-/*	checker	*/
+	pthread_t		thread_id;
+
+	pthread_mutex_t	*left_fork;
+	pthread_mutex_t	*right_fork;
+}	t_philo;
+
+typedef struct s_general
+{
+	int				time_to_eat;
+	int				time_to_die;
+	int				time_to_sleep;
+	
+	int				number_of_philo;
+	int				number_of_meals;
+	int				starting_time;
+	
+	t_philo			*philos;
+}	t_general;
+
+/*//! PROTOTYPES	*/
+
+/*//? checker	*/
 int	args_are_correct(int argc, char **argv);
 
-/*	errors	*/
+/*//? errors	*/
 void	print_right_syntax(void);
 void	print_limits_error(void);
 
-/*	libft	*/
+/*//? libft		*/
 long	ft_atol(const char *str);
 int		ft_strlen(char *str);
+char	*ft_itoa(int n);
 
 #endif
