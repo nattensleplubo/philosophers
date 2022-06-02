@@ -17,6 +17,8 @@ SRCS = ./main.c \
 		./srcs/routine/routine.c \
 		./srcs/routine/check_death.c \
 		./srcs/routine/actions.c \
+		./srcs/utils/get_time.c \
+		./srcs/utils/display_message.c \
 
 OBJS = ${SRCS:.c=.o}
 

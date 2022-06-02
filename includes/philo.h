@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 14:10:58 by ngobert           #+#    #+#             */
-/*   Updated: 2022/06/02 11:02:25 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/06/02 14:16:34 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,19 +62,19 @@ typedef struct s_general
 	
 	t_philo			*philos;
 	pthread_mutex_t	*fork_mutex;
-	pthread_mutex_t	*mutex;
+	pthread_mutex_t	mutex;
 }	t_general;
 
 /*//! PROTOTYPES	*/
 
-/*//? checker	*/
+/*//? checker		*/
 int	args_are_correct(int argc, char **argv);
 
-/*//? errors	*/
+/*//? errors		*/
 void	print_right_syntax(void);
 void	print_limits_error(void);
 
-/*//? libft		*/
+/*//? libft			*/
 long	ft_atol(const char *str);
 int		ft_strlen(char *str);
 char	*ft_itoa(int n);
@@ -83,10 +83,21 @@ int		ft_atoi(const char *str);
 /*//? strucure initialization	*/
 int	init_structs(t_general *general, char **argv);
 
-/*//? routine	*/
+/*//? routine		*/
 void	begin_routine(t_general *data);
 
 /*//? check_death	*/
-int	a_philo_is_dead(t_philo *philo);
+int		a_philo_is_dead(t_philo *philo);
+
+/*//? actions		*/
+int		philo_takes_forks(t_philo *philo);
+void	philo_is_eating(t_philo *philo);
+void	philo_is_thinking(t_philo *philo);
+void	philo_is_sleeping(t_philo *philo);
+
+/*//? utils			*/
+int		get_time(void);
+void	print_message(char *str, t_philo *philo);
+void	ft_sleep(int time, t_philo *philo);
 
 #endif
