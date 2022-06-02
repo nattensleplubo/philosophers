@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 10:43:50 by ngobert           #+#    #+#             */
-/*   Updated: 2022/05/31 17:03:22 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/06/02 10:51:04 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	init_mutex(t_general *general)
 		return (FAILURE);
 	while (++i < general->number_of_philo)
 		pthread_mutex_init(&general->fork_mutex[i], NULL);
+	pthread_mutex_init(&general->mutex, NULL); 
 	return (SUCCESS);
 }
 

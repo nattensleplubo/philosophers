@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:26:09 by ngobert           #+#    #+#             */
-/*   Updated: 2022/05/31 17:07:25 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/06/02 11:19:08 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,26 @@ void	*philo_routine(void *arg)
 	t_philo	*philo;
 
 	philo = (t_philo *)arg;
-	if (pthread_mutex_lock(philo->left_fork) == 0)
+	while (philo->general->is_dead == 0)
 	{
-		printf("%d : took a fork\n", philo->id);
-		printf("%d is eating\n", philo->id);
-		usleep(philo->time_to_eat);
+		if (a_philo_is_dead(philo))
+			return (0);
+		philo_takes_forks(philo);
+		if (a_philo_is_dead(philo))
+		{
+			pthread_mutex_unlock(philo->left_fork);
+			pthread_mutex_unlock(philo->right_fork);
+			return (0);
+		}
+		philo_is_eating(philo);
+		if (a_philo_is_dead(philo))
+			return (0);
+		philo_is_sleeping(philo);
+		if (a_philo_is_dead(philo))
+			return (0);
+		philo_is_thinking(philo);
 	}
-	return (arg);
+	return (0);
 }
 
 void	begin_routine(t_general *data)

@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   check_death.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/11 14:04:26 by ngobert           #+#    #+#             */
-/*   Updated: 2022/06/02 09:53:02 by ngobert          ###   ########.fr       */
+/*   Created: 2022/06/02 10:59:08 by ngobert           #+#    #+#             */
+/*   Updated: 2022/06/02 11:02:32 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-/*
-
-	pthread_create && join return 0 si le thread s'est bien crée
-
-*/
-
-int	main(int argc, char **argv)
+int	a_philo_is_dead(t_philo *philo)
 {
-	t_general	general;
-
-	if (args_are_correct(argc, argv))
+	pthread_mutex_lock(&philo->general->mutex);
+	if (philo->general->is_dead == 1)
 	{
-		if (init_structs(&general, argv))
-		{
-			begin_routine(&general);	//boucle while qui va init les philos et leur donne la routine et apres on fou le monitoring dans un thread ou dans le thread principal ?
-		}
+		pthread_mutex_unlock(&philo->general->mutex);
+		return (1);
 	}
+	pthread_mutex_unlock(&philo->general->mutex);
+	return (0);
 }

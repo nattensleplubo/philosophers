@@ -15,6 +15,8 @@ SRCS = ./main.c \
 		./srcs/libft/ft_itoa.c \
 		./srcs/init/init_t_general.c \
 		./srcs/routine/routine.c \
+		./srcs/routine/check_death.c \
+		./srcs/routine/actions.c \
 
 OBJS = ${SRCS:.c=.o}
 
