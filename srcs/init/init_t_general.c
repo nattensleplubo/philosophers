@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 10:43:50 by ngobert           #+#    #+#             */
-/*   Updated: 2022/06/02 14:16:42 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/06/03 13:35:16 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	init_mutex(t_general *general)
 		return (FAILURE);
 	while (++i < general->number_of_philo)
 		pthread_mutex_init(&general->fork_mutex[i], NULL);
-	pthread_mutex_init(&general->mutex, NULL); 
+	pthread_mutex_init(&general->mutex, NULL);
 	return (SUCCESS);
 }
 
@@ -39,7 +39,8 @@ int	init_philos(t_general *general)
 	{
 		general->philos[i].id = i + 1;
 		general->philos[i].left_fork = &general->fork_mutex[i];
-		general->philos[i].right_fork = &general->fork_mutex[(i + 1) % general->number_of_philo];
+		general->philos[i].right_fork = &general->fork_mutex[(i + 1)
+			% general->number_of_philo];
 		general->philos[i].general = general;
 		general->philos[i].time_to_die = general->time_to_die;
 		general->philos[i].time_to_eat = general->time_to_eat;

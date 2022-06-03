@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:26:09 by ngobert           #+#    #+#             */
-/*   Updated: 2022/06/02 13:18:38 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/06/03 13:32:11 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,13 @@ void	*philo_routine(void *arg)
 void	begin_routine(t_general *data)
 {
 	int	i;
-	
+
 	i = 0;
 	data->starting_time = get_time();
 	while (i < data->number_of_philo)
 	{
-		pthread_create(&data->philos[i].thread_id, NULL, &philo_routine, (void *)&data->philos[i]);
+		pthread_create(&data->philos[i].thread_id,
+			NULL, &philo_routine, (void *)&data->philos[i]);
 		i++;
 	}
 	i = 0;

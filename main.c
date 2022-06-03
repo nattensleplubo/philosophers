@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 14:04:26 by ngobert           #+#    #+#             */
-/*   Updated: 2022/06/02 09:53:02 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/06/03 10:36:43 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(int argc, char **argv)
 	{
 		if (init_structs(&general, argv))
 		{
-			begin_routine(&general);	//boucle while qui va init les philos et leur donne la routine et apres on fou le monitoring dans un thread ou dans le thread principal ?
+			begin_routine(&general);
 		}
 	}
 }

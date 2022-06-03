@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 14:10:58 by ngobert           #+#    #+#             */
-/*   Updated: 2022/06/02 14:16:34 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/06/03 13:32:45 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,20 @@
 # define PHILO_H
 
 /*//! DEFINES		*/
-#define TRUE 1
-#define SUCCESS 1
-#define FALSE 0
-#define ERROR 0
-#define FAILURE 0
+# define TRUE 1
+# define SUCCESS 1
+# define FALSE 0
+# define ERROR 0
+# define FAILURE 0
 
 /*//! LIBRAIRIES	*/
-#include <pthread.h>
-#include <stdio.h>
-#include <limits.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <sys/time.h>
-#include "colors.h"
+# include <pthread.h>
+# include <stdio.h>
+# include <limits.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <sys/time.h>
+# include "colors.h"
 
 /*//! STRUCTURES	*/
 typedef struct s_philo
@@ -55,11 +55,11 @@ typedef struct s_general
 	int				time_to_die;
 	int				time_to_eat;
 	int				time_to_sleep;
-	
+
 	int				number_of_meals;
 	int				starting_time;
 	int				is_dead;
-	
+
 	t_philo			*philos;
 	pthread_mutex_t	*fork_mutex;
 	pthread_mutex_t	mutex;
@@ -68,7 +68,7 @@ typedef struct s_general
 /*//! PROTOTYPES	*/
 
 /*//? checker		*/
-int	args_are_correct(int argc, char **argv);
+int		args_are_correct(int argc, char **argv);
 
 /*//? errors		*/
 void	print_right_syntax(void);
@@ -81,7 +81,7 @@ char	*ft_itoa(int n);
 int		ft_atoi(const char *str);
 
 /*//? strucure initialization	*/
-int	init_structs(t_general *general, char **argv);
+int		init_structs(t_general *general, char **argv);
 
 /*//? routine		*/
 void	begin_routine(t_general *data);

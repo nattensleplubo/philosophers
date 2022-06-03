@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 21:19:22 by ngobert           #+#    #+#             */
-/*   Updated: 2022/05/31 10:41:39 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/06/03 13:34:45 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	the_string_is_numeric(char *str)
 int	all_args_are_nums(char **argv)
 {
 	int	i;
-	
+
 	i = 0;
 	while (argv[++i])
 	{
