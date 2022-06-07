@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:26:09 by ngobert           #+#    #+#             */
-/*   Updated: 2022/06/03 13:32:11 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/06/07 16:37:34 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,5 @@ void	begin_routine(t_general *data)
 		pthread_join(data->philos[i].thread_id, NULL);
 		i++;
 	}
+	begin_monitoring(data);
 }
