@@ -6,11 +6,19 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 14:09:35 by ngobert           #+#    #+#             */
-/*   Updated: 2022/06/07 17:03:45 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/06/08 10:19:43 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
+
+int	check_last_meal(t_philo *philo)
+{
+	if (get_time() - philo->last_meal > philo->time_to_die)
+		return (0);
+	else
+		return (1);
+}
 
 int	check_if_one_is_dead(t_general *general)
 {
