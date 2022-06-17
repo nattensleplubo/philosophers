@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:26:09 by ngobert           #+#    #+#             */
-/*   Updated: 2022/06/07 16:37:34 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/06/17 13:26:26 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,18 @@ void	*philo_routine(void *arg)
 	return (0);
 }
 
+void	join_threads(t_general *data)
+{
+	int	i;
+
+	i = 0;
+	while (i < data->number_of_philo)
+	{
+		pthread_join(data->philos[i].thread_id, NULL);
+		i++;
+	}
+}
+
 void	begin_routine(t_general *data)
 {
 	int	i;
@@ -51,11 +63,4 @@ void	begin_routine(t_general *data)
 			NULL, &philo_routine, (void *)&data->philos[i]);
 		i++;
 	}
-	i = 0;
-	while (i < data->number_of_philo)
-	{
-		pthread_join(data->philos[i].thread_id, NULL);
-		i++;
-	}
-	begin_monitoring(data);
 }

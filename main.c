@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 14:04:26 by ngobert           #+#    #+#             */
-/*   Updated: 2022/06/03 10:36:43 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/06/17 13:26:57 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ int	main(int argc, char **argv)
 		if (init_structs(&general, argv))
 		{
 			begin_routine(&general);
+			begin_monitoring(&general);
+			join_threads(&general);
 		}
 	}
 }

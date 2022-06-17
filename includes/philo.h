@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 14:10:58 by ngobert           #+#    #+#             */
-/*   Updated: 2022/06/03 13:32:45 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/06/17 13:21:36 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,8 @@ int		init_structs(t_general *general, char **argv);
 
 /*//? routine		*/
 void	begin_routine(t_general *data);
+void	*begin_monitoring(void *arg);
+void	join_threads(t_general *data);
 
 /*//? check_death	*/
 int		a_philo_is_dead(t_philo *philo);
