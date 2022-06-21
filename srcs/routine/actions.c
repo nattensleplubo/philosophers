@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 11:07:33 by ngobert           #+#    #+#             */
-/*   Updated: 2022/06/21 13:34:03 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/06/21 15:09:09 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	philo_takes_forks(t_philo *philo)
 	else
 		pthread_mutex_lock(philo->left_fork);
 	if (!a_philo_is_dead(philo))
-		print_message("has taken a fork", philo);
+		print_message(BGRN"has taken a fork"CRESET, philo);
 	if (philo->id % 2 == 0)
 	{
 		if (pthread_mutex_lock(philo->left_fork) != 0)
@@ -28,7 +28,7 @@ int	philo_takes_forks(t_philo *philo)
 			return (1);
 		}
 		if (!a_philo_is_dead(philo))
-			print_message("has taken a fork", philo);
+			print_message(BGRN"has taken a fork"CRESET, philo);
 	}
 	else
 	{
@@ -38,14 +38,14 @@ int	philo_takes_forks(t_philo *philo)
 			return (1);
 		}
 		if (!a_philo_is_dead(philo))
-			print_message("has taken a fork", philo);
+			print_message(BGRN"has taken a fork"CRESET, philo);
 	}
 	return (0);
 }
 
 void	philo_is_eating(t_philo *philo)
 {
-	print_message("is eating", philo);
+	print_message(BYEL"is eating"CRESET, philo);
 	pthread_mutex_lock(&philo->general->mutex);
 	philo->last_meal = get_time() - philo->general->starting_time;
 	philo->time_to_die = philo->last_meal + philo->general->time_to_die;
@@ -61,11 +61,11 @@ void	philo_is_eating(t_philo *philo)
 
 void	philo_is_sleeping(t_philo *philo)
 {
-	print_message("is sleeping", philo);
+	print_message(BBLU"is sleeping"CRESET, philo);
 	ft_sleep(philo->general->time_to_sleep, philo);
 }
 
 void	philo_is_thinking(t_philo *philo)
 {
-	print_message("is thinking", philo);
+	print_message(BCYN"is thinking"CRESET, philo);
 }
