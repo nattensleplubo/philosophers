@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 11:07:33 by ngobert           #+#    #+#             */
-/*   Updated: 2022/06/21 15:09:09 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/06/23 12:11:36 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,20 +23,14 @@ int	philo_takes_forks(t_philo *philo)
 	if (philo->id % 2 == 0)
 	{
 		if (pthread_mutex_lock(philo->left_fork) != 0)
-		{
-			pthread_mutex_unlock(philo->right_fork);
-			return (1);
-		}
+			return (pthread_mutex_unlock(philo->right_fork), 1);
 		if (!a_philo_is_dead(philo))
 			print_message(BGRN"has taken a fork"CRESET, philo);
 	}
 	else
 	{
 		if (pthread_mutex_lock(philo->right_fork) != 0)
-		{
-			pthread_mutex_unlock(philo->left_fork);
-			return (1);
-		}
+			return (pthread_mutex_unlock(philo->left_fork), 1);
 		if (!a_philo_is_dead(philo))
 			print_message(BGRN"has taken a fork"CRESET, philo);
 	}
