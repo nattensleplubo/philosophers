@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 14:10:58 by ngobert           #+#    #+#             */
-/*   Updated: 2022/06/17 13:21:36 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/06/23 10:22:29 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,5 +101,6 @@ void	philo_is_sleeping(t_philo *philo);
 int		get_time(void);
 void	print_message(char *str, t_philo *philo);
 void	ft_sleep(int time, t_philo *philo);
+void	free_philos(t_general *general);
 
 #endif

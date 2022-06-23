@@ -20,6 +20,7 @@ SRCS = ./main.c \
 		./srcs/routine/monitoring.c \
 		./srcs/utils/get_time.c \
 		./srcs/utils/display_message.c \
+		./srcs/utils/free_philos.c \
 
 OBJS = ${SRCS:.c=.o}
 
