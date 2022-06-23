@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 14:10:58 by ngobert           #+#    #+#             */
-/*   Updated: 2022/06/23 10:22:29 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/06/23 15:36:29 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 /*//! DEFINES		*/
 # define TRUE 1
 # define SUCCESS 1
+# define OK 1
 # define FALSE 0
 # define ERROR 0
 # define FAILURE 0
