@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 14:09:35 by ngobert           #+#    #+#             */
-/*   Updated: 2022/06/23 12:12:46 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/06/23 17:07:48 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ int	check_last_meal(t_philo *philo)
 {
 	if (get_time() - philo->general->starting_time > philo->time_to_die)
 	{
+		philo->general->is_dead = 1;
 		printf(BRED"%d %d died\n"CRESET, get_time()
 			- philo->general->starting_time, philo->id);
-		philo->general->is_dead = 1;
 		return (0);
 	}
 	else

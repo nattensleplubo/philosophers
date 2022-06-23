@@ -14,8 +14,11 @@
 
 void	print_message(char *str, t_philo *philo)
 {
-	pthread_mutex_lock(&philo->general->mutex);
-	printf("%d %d %s\n", get_time()
-		- philo->general->starting_time, philo->id, str);
-	pthread_mutex_unlock(&philo->general->mutex);
+	if (!a_philo_is_dead(philo))
+	{
+		pthread_mutex_lock(&philo->general->mutex);
+			printf("%d %d %s\n", get_time()
+				- philo->general->starting_time, philo->id, str);
+		pthread_mutex_unlock(&philo->general->mutex);
+	}
 }
