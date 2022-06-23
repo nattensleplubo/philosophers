@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 21:32:33 by ngobert           #+#    #+#             */
-/*   Updated: 2022/05/30 14:02:27 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/06/23 13:24:09 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_putstr(char *str)
 void	print_limits_error(void)
 {
 	ft_putstr(BRED"\nNo arguments \
-should be above the int limits!\n\n"CRESET);
+should be above the int limits or equal to 0!\n\n"CRESET);
 }
 
 void	print_right_syntax(void)

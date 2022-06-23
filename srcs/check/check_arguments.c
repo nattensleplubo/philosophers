@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 21:19:22 by ngobert           #+#    #+#             */
-/*   Updated: 2022/06/03 13:34:45 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/06/23 13:23:48 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int	all_args_are_nums(char **argv)
 
 int	arg_outside_limits(char *str)
 {
-	if (ft_atol(str) > INT_MAX || ft_atol(str) < INT_MIN)
+	if (ft_atol(str) > INT_MAX || ft_atol(str) < INT_MIN|| ft_atol(str) == 0)
 		return (TRUE);
 	return (FALSE);
 }
