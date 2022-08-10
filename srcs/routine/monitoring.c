@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 14:09:35 by ngobert           #+#    #+#             */
-/*   Updated: 2022/06/23 17:07:48 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/08/10 20:07:22 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,20 @@ int	check_last_meal(t_philo *philo)
 		return (1);
 }
 
+int	meals_are_over(t_philo *philo)
+{
+	if (philo->general->number_of_meals != -1)
+	{
+		// dprintf(2, "COUILLE\n");
+		if (philo->general->number_of_meals <= philo->number_of_meals)
+		{
+			philo->general->is_dead = 1;
+			return (SUCCESS);
+		}
+	}
+	return (0);
+}
+
 int	check_if_one_is_dead(t_general *general)
 {
 	int	i;
@@ -32,12 +46,13 @@ int	check_if_one_is_dead(t_general *general)
 	i = 0;
 	while (i < general->number_of_philo)
 	{
-		if (check_last_meal(&general->philos[i]) == ERROR)
+		if (check_last_meal(&general->philos[i]) == ERROR || meals_are_over(&general->philos[i]) == SUCCESS)
 			return (ERROR);
 		i++;
 	}
 	return (1);
 }
+
 
 void	*begin_monitoring(void *arg)
 {
