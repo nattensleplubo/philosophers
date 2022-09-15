@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 14:09:35 by ngobert           #+#    #+#             */
-/*   Updated: 2022/09/15 16:01:10 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/09/15 17:18:54 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,14 @@ int	check_if_one_is_dead(t_general *general)
 	i = 0;
 	while (i < general->number_of_philo)
 	{
-		if (check_last_meal(&general->philos[i]) == ERROR || meals_are_over(&general->philos[general->number_of_philo - 1]) == SUCCESS)
+		if (check_last_meal(&general->philos[i]) == ERROR
+			|| meals_are_over(&general->philos[general->number_of_philo - 1])
+			== SUCCESS)
 			return (ERROR);
 		i++;
 	}
 	return (1);
 }
-
 
 void	*begin_monitoring(void *arg)
 {

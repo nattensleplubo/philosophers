@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_message.c                                  :+:      :+:    :+:   */
+/*   ft_isnumeric.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/02 13:24:36 by ngobert           #+#    #+#             */
-/*   Updated: 2022/06/02 13:29:10 by ngobert          ###   ########.fr       */
+/*   Created: 2022/09/15 17:20:36 by ngobert           #+#    #+#             */
+/*   Updated: 2022/09/15 17:20:54 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-void	print_message(char *str, t_philo *philo)
+int	is_numeric(int c)
 {
-	if (!a_philo_is_dead(philo))
+	if (c >= 48 && c <= 57)
+		return (TRUE);
+	else
+		return (FALSE);
+}
+
+int	the_string_is_numeric(char *str)
+{
+	int	i;
+
+	i = -1;
+	while (str[++i])
 	{
-		pthread_mutex_lock(&philo->general->mutex);
-		printf("%d %d %s\n", get_time()
-			- philo->general->starting_time, philo->id, str);
-		pthread_mutex_unlock(&philo->general->mutex);
+		if (is_numeric(str[i]) == FALSE)
+			return (FALSE);
 	}
+	return (TRUE);
 }

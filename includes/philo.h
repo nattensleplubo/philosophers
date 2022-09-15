@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 14:10:58 by ngobert           #+#    #+#             */
-/*   Updated: 2022/09/15 16:05:28 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/09/15 17:21:20 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,8 @@ long	ft_atol(const char *str);
 int		ft_strlen(char *str);
 char	*ft_itoa(int n);
 int		ft_atoi(const char *str);
+int		is_numeric(int c);
+int		the_string_is_numeric(char *str);
 
 /*//? strucure initialization	*/
 int		init_structs(t_general *general, char **argv);
