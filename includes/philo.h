@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 14:10:58 by ngobert           #+#    #+#             */
-/*   Updated: 2022/06/23 15:36:29 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/09/15 16:05:28 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,7 @@ int		init_structs(t_general *general, char **argv);
 
 /*//? routine		*/
 void	begin_routine(t_general *data);
+void	begin_one_philo(t_general *data);
 void	*begin_monitoring(void *arg);
 void	join_threads(t_general *data);
 

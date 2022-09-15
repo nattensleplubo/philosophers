@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 14:04:26 by ngobert           #+#    #+#             */
-/*   Updated: 2022/09/09 11:57:06 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/09/15 17:12:36 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,18 @@ int	main(int argc, char **argv)
 	{
 		if (init_structs(&general, argv))
 		{
+			if (general.number_of_philo != 1)
+			{
 				begin_routine(&general);
 				begin_monitoring(&general);
 				join_threads(&general);
 				free_philos(&general);
+			}
+			else
+			{
+				begin_one_philo(&general);
+				free_philos(&general);
+			}
 		}
 	}
 }
