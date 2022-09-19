@@ -13,6 +13,7 @@ SRCS = ./main.c \
 		./srcs/libft/ft_strlen.c \
 		./srcs/libft/ft_atol.c \
 		./srcs/libft/ft_itoa.c \
+		./srcs/libft/ft_isnumeric.c \
 		./srcs/init/init_t_general.c \
 		./srcs/routine/routine.c \
 		./srcs/routine/check_death.c \
